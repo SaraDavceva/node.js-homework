@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <table border="1px" color="black">
+            <thead>
+                <tr>
+                    <th>Име</th>
+                    <th>Презиме</th>
+                    <th>Просек</th>
+                    <th>Акција</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% studenti.forEach(function(student, index) { %>
+                    <tr>
+                        <td>
+                            <%= student.ime %>
+                        </td>
+                        <td>
+                            <%= student.prezime %>
+                        </td>
+                        <td>
+                            <%= student.prosek %>
+                        </td>
+                        <td><a href="/brishi?i=<%= index %>">Бриши</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+</body>
+
+</html>
